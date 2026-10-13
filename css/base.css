@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    400 1.125rem/1.65 Inter,
+    system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-top: env(safe-area-inset-top, 0px);
+  min-height: 100%;
+}
+h1,
+h2,
+h3,
+.serif {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+h1 {
+  font-size: clamp(2.6rem, 8vw + 1rem, 7.5rem);
+  line-height: 0.98;
+}
+h2 {
+  font-size: clamp(2rem, 4.5vw + 1rem, 4.5rem);
+}
+h3 {
+  font-size: clamp(1.35rem, 1.2vw + 1rem, 1.9rem);
+  line-height: 1.15;
+}
+em {
+  font-style: italic;
+}
+p {
+  max-width: 62ch;
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.wrap {
+  max-width: 1320px;
+  margin: auto;
+  padding-inline: clamp(20px, 5vw, 64px);
+}
+section {
+  padding-block: clamp(72px, 12vw, 160px);
+}
+.lab {
+  font-size: 0.875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+.lab:before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--gold);
+}
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 12px 18px;
+  border-radius: 2px;
+  z-index: 99;
+}
+.skip:focus {
+  left: 8px;
+}
+/* botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 56px;
+  padding: 0 28px;
+  border-radius: 2px;
+  background: var(--accent);
+  color: var(--on);
+  font:
+    600 1.0625rem Inter,
+    sans-serif;
+  text-decoration: none;
+  border: 1.5px solid var(--accent);
+  cursor: pointer;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sh);
+}
+.btn svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+.btn.sec {
+  background: transparent;
+  color: inherit;
+  border-color: currentColor;
+}
+.btn.inv {
+  background: var(--bg);
+  color: #1f4e5f;
+  border-color: var(--bg);
+}
+.btn.sm {
+  min-height: 48px;
+  padding: 0 18px;
+  font-size: 1rem;
+}
+.ico {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

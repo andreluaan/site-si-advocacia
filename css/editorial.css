@@ -1,0 +1,120 @@
+/* Linguagem editorial: seções escuras, nome gigante, linhas de áreas e barras de processo */
+
+/* Seção escura (reaproveita os tokens, trocando só as cores) */
+.dark {
+  --bg: #161513;
+  --ink: #f3ede2;
+  --soft: #b8b0a1;
+  --line: rgba(240, 240, 238, 0.2);
+  --accent: #f3ede2;
+  --on: #1e1c19;
+  --gold-t: #cdb27c;
+  background: var(--bg);
+  color: var(--ink);
+}
+.cta.dark .bg {
+  background: linear-gradient(160deg, #1b1b1e, #2a2a2e);
+}
+
+/* Áreas de atuação em linhas grandes */
+.rows {
+  list-style: none;
+  padding: 0;
+  margin-top: clamp(32px, 5vw, 64px);
+}
+.row {
+  display: grid;
+  gap: 12px;
+  padding-block: clamp(24px, 3.5vw, 44px);
+  border-top: 1px solid var(--line);
+}
+.row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.row h3 {
+  font-size: clamp(2rem, 4.2vw, 4rem);
+  line-height: 1.02;
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.row:hover h3 {
+  transform: translateX(12px);
+}
+.tags {
+  color: var(--soft);
+  font-size: 1rem;
+  max-width: 46ch;
+}
+
+/* Como funciona: barras empilhadas, do claro ao dourado */
+.bars {
+  list-style: none;
+  padding: 0;
+  margin-top: clamp(32px, 5vw, 64px);
+  display: grid;
+  gap: 8px;
+}
+.bars li {
+  display: grid;
+  gap: 4px;
+  align-items: center;
+  padding: clamp(18px, 2.4vw, 28px) clamp(20px, 3vw, 40px);
+  color: #1e1c19;
+  border-radius: 2px;
+}
+.bars li:nth-child(1) {
+  background: #e9e2d3;
+}
+.bars li:nth-child(2) {
+  background: #d9cdb4;
+}
+.bars li:nth-child(3) {
+  background: #c6b38f;
+}
+.bars li:nth-child(4) {
+  background: #a88b55;
+}
+.bt {
+  font:
+    500 clamp(1.5rem, 2.6vw, 2.4rem) / 1.1 "Cormorant Garamond",
+    Georgia,
+    serif;
+}
+.bars b {
+  font:
+    500 clamp(2.6rem, 6vw, 5rem) / 1 "Cormorant Garamond",
+    Georgia,
+    serif;
+  opacity: 0.55;
+  justify-self: end;
+}
+
+/* Rodapé: nome repetido e cortado na borda */
+.big {
+  font-size: 15vw;
+  text-align: left;
+  margin-left: -1vw;
+}
+
+@media (min-width: 900px) {
+  .row {
+    grid-template-columns: 6fr 5fr 2fr;
+    align-items: center;
+    gap: clamp(16px, 3vw, 48px);
+  }
+  .row .link {
+    justify-self: end;
+    text-align: right;
+  }
+  .bars li {
+    grid-template-columns: 4fr 5fr 2fr;
+    gap: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .row h3 {
+    transition: none;
+  }
+  .row:hover h3 {
+    transform: none;
+  }
+}

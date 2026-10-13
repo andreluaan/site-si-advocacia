@@ -1,0 +1,111 @@
+/* Animações (só transform/opacity; desligadas com prefers-reduced-motion) */
+@view-transition {
+  navigation: auto;
+}
+h1 em {
+  background: linear-gradient(var(--gold), var(--gold)) 0 100%/0 0.06em no-repeat;
+  animation: ul 0.7s 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+@keyframes ul {
+  to {
+    background-size: 100% 0.06em;
+  }
+}
+.js .mask {
+  clip-path: inset(0 0 100% 0);
+  transition:
+    clip-path 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.6s;
+}
+.js .mask.in {
+  clip-path: inset(0);
+}
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px) scale(1.01);
+}
+.card li:after {
+  transition: transform 0.3s;
+}
+.card:hover li:after,
+.card:focus-within li:after {
+  transform: translateX(6px);
+}
+#mp:not([hidden]) a.l {
+  animation: cas 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+#mp a.l:nth-of-type(2) {
+  animation-delay: 0.05s;
+}
+#mp a.l:nth-of-type(3) {
+  animation-delay: 0.1s;
+}
+#mp a.l:nth-of-type(4) {
+  animation-delay: 0.15s;
+}
+#mp a.l:nth-of-type(5) {
+  animation-delay: 0.2s;
+}
+#mp a.l:nth-of-type(6) {
+  animation-delay: 0.25s;
+}
+@keyframes cas {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+@supports (animation-timeline: view()) {
+  .js .steps li.rv {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .steps li {
+    animation: lit linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+  }
+  @keyframes lit {
+    from {
+      opacity: 0.25;
+      border-left-color: var(--line);
+    }
+    to {
+      opacity: 1;
+      border-left-color: var(--gold);
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+  h1 em {
+    animation: none;
+    background-size: 100% 0.06em;
+  }
+  .js .mask {
+    clip-path: none;
+  }
+  .steps li,
+  #mp a.l {
+    animation: none !important;
+    opacity: 1;
+  }
+  .fg {
+    transform: none !important;
+  }
+}
+
+/* Desempenho: entradas mais rápidas e camadas em movimento promovidas à GPU */
+.ln > span {
+  animation-duration: 0.6s;
+}
+.js .rv {
+  transition-duration: 0.6s;
+}
+.bg,
+.fg {
+  will-change: transform;
+}

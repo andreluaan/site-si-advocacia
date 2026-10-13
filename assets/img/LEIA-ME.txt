@@ -1,0 +1,8 @@
+Coloque aqui as fotos (WebP ou AVIF, ideal até 200 KB cada). Se o arquivo não existir, o site mostra o espaço reservado.
+
+hero.webp          1920x1080  Fundo do início: conversa, escuta, mãos, ambiente acolhedor com luz natural
+sobre.webp         1000x1250  Retrato do advogado (proporção 4:5)
+equipe-1.webp      1000x1250  Retrato do 1º membro da equipe (equipe-2, equipe-3... para os próximos)
+escritorio-1.webp  1200x1500  Fachada
+escritorio-2.webp  1200x800   Recepção
+escritorio-3.webp  1200x800   Sala de atendimento
