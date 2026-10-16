@@ -322,7 +322,7 @@ footer [data-social] a {
   padding: 10px 14px;
 }
 .cform .chk input {
-  min-height: 28px;
+  min-height: 0;
   padding: 0;
 }
 .cform textarea {
