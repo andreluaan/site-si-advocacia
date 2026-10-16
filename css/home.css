@@ -425,7 +425,7 @@ summary:after {
   color: var(--soft);
 }
 .cform [aria-invalid="true"] {
-  border-color: #b3261e;
+  border-color: var(--err);
   border-width: 2px;
 }
 

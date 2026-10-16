@@ -9,6 +9,27 @@ const onScroll = () => {
 };
 addEventListener("scroll", onScroll, { passive: true });
 onScroll();
+/* botão de tema: alterna claro/escuro e guarda a escolha neste navegador */
+const themeButton = $("#tg"),
+  systemDark = matchMedia("(prefers-color-scheme: dark)");
+const currentTheme = () =>
+  document.documentElement.dataset.theme || (systemDark.matches ? "dark" : "light");
+const syncThemeButton = () => {
+  const dark = currentTheme() === "dark";
+  themeButton.setAttribute("aria-pressed", dark);
+  themeButton.setAttribute("aria-label", dark ? "Usar tema claro" : "Usar tema escuro");
+  themeButton.title = themeButton.getAttribute("aria-label");
+};
+themeButton.onclick = () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  try {
+    localStorage.setItem("tema", next);
+  } catch (_) {}
+  syncThemeButton();
+};
+systemDark.addEventListener("change", syncThemeButton);
+syncThemeButton();
 /* menu mobile com focus trap */
 const menuPanel = $("#mp"),
   menuButton = $("#mbtn");

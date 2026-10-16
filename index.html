@@ -40,6 +40,11 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <script>
       document.documentElement.classList.add("js");
+      // tema escolhido pelo botão (claro/escuro) aplicado antes de pintar a página
+      try {
+        const tema = localStorage.getItem("tema");
+        if (tema) document.documentElement.dataset.theme = tema;
+      } catch (_) {}
     </script>
     <link
       rel="preload"

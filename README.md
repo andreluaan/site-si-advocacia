@@ -34,6 +34,7 @@ assets/ logo, favicon, fontes e fotos
 - **Contato:** o formulário não envia e-mail. Ele abre o WhatsApp com a mensagem pronta. Se `SITE.formEndpoint` estiver preenchido, uma cópia também é enviada para esse endereço.
 - **Fotos:** cada espaço de foto usa o arquivo de `assets/img`, se ele existir. A seção "O escritório" só aparece quando há pelo menos uma foto.
 - **Mapa e vídeo:** só aparecem quando `SITE.mapsEmbed` e `SITE.heroVideo` estão preenchidos.
+- **Tema claro/escuro:** segue o sistema do visitante; o botão de sol/lua no cabeçalho troca o tema e a escolha fica guardada no navegador.
 - **Cookies (LGPD):** medições só acontecem depois que o visitante clica em "Aceitar".
 - **Acessibilidade:** navegação por teclado, link "Pular para o conteúdo", tamanhos de toque grandes e respeito à opção de reduzir animações do sistema.
 

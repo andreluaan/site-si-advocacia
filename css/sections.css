@@ -315,14 +315,9 @@ textarea {
   min-height: 120px;
 }
 .err {
-  color: #b3261e;
+  color: var(--err);
   font-size: 1rem;
   min-height: 0;
-}
-@media (prefers-color-scheme: dark) {
-  .err {
-    color: #ff9a92;
-  }
 }
 .chk {
   display: flex;
