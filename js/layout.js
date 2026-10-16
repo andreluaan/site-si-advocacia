@@ -68,7 +68,9 @@
           </ul>
         </nav>
         <div class="hr">
-          <span class="soc" data-social="icon"></span
+          <span class="soc" data-social="icon"></span>
+          <a class="btn sm wa hwa" data-pos="header" href="#"
+            ><svg class="ico" aria-hidden="true"><use href="#wa" /></svg>WhatsApp</a
           >
           <button class="mb" id="mbtn" type="button" aria-expanded="false" aria-controls="mp">
             Menu
@@ -81,14 +83,17 @@
   /* MENU */
   const MENU = `
     <div id="mp" hidden role="dialog" aria-modal="true" aria-label="Menu">
-      <button class="mb" id="mx" style="align-self: flex-end; color: var(--ink)">
-        Fechar
+      <button class="mb" id="mx" type="button" style="align-self: flex-end; color: var(--ink)">
+        Fechar menu ✕
       </button>
       <a class="l" href="${B}#areas">Áreas de atuação</a
       ><a class="l" href="${B}#como-funciona">Como funciona</a
       ><a class="l" href="equipe.html">Equipe</a><a class="l" href="${B}#sobre">Sobre</a
       ><a class="l" href="${B}#duvidas">Dúvidas</a
       ><a class="l" href="${B}#contato">Contato</a>
+      <a class="btn wa mwa" data-pos="menu" href="#"
+        ><svg class="ico" aria-hidden="true"><use href="#wa" /></svg>Falar no WhatsApp</a
+      >
       <div class="soc" data-social="icon"></div>
     </div>
   `;
@@ -164,7 +169,7 @@
     <div id="ck" role="region" aria-label="Cookies" hidden>
       <p>
         Usamos cookies de medição apenas se você permitir. Veja a
-        <a href="#privacidade" style="color: var(--accent)">Política de Privacidade</a>.
+        <a href="#privacidade">Política de Privacidade</a>.
       </p>
       <div>
         <button class="btn" type="button" data-c="1">Aceitar</button

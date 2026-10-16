@@ -8,7 +8,7 @@
   choose.innerHTML = SITE.situations
     .map(
       (s) =>
-        `<button type="button" class="sit-btn" data-id="${s.id}" aria-pressed="false" aria-controls="sit-${s.id}"><b>${s.title}</b><span>${s.hint}</span></button>`,
+        `<button type="button" class="sit-btn" data-id="${s.id}" aria-pressed="false" aria-controls="sit-${s.id}"><b>${s.title}</b><span>${s.hint}</span><i aria-hidden="true">→</i></button>`,
     )
     .join("");
 

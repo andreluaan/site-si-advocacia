@@ -377,3 +377,90 @@ footer [data-social] a {
 }
 
 
+/* ---------- Usabilidade: ação principal sempre à vista, dicas e sinais de clique ---------- */
+
+/* Texto do topo legível sobre a foto: véu mais forte do lado do texto */
+@media (min-width: 900px) {
+  .hero:after {
+    background:
+      linear-gradient(90deg, var(--veil2) 0%, var(--veil2) 38%, var(--veil1) 78%),
+      linear-gradient(transparent 60%, var(--veil2));
+  }
+}
+
+/* WhatsApp no cabeçalho (computador) e no menu (celular) */
+.hwa {
+  display: none;
+  background: #f3ede2;
+  color: #161513;
+  border-color: #f3ede2;
+}
+header :focus-visible {
+  outline-color: #f3ede2;
+}
+@media (min-width: 900px) {
+  .hwa {
+    display: inline-flex;
+  }
+}
+#mp .mwa {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Situações: seta indica que o cartão é clicável */
+.sit-btn {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 16px;
+}
+.sit-btn b,
+.sit-btn span {
+  grid-column: 1;
+}
+.sit-btn i {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font-style: normal;
+  font-size: 1.4rem;
+  color: var(--gold);
+  transition: transform 0.25s;
+}
+.sit-btn:hover i,
+.sit-btn[aria-pressed="true"] i {
+  transform: translateX(4px);
+  color: inherit;
+}
+.sit-panel {
+  scroll-margin-top: 96px;
+}
+
+/* Dúvidas: área de toque inteira reage ao passar o mouse */
+summary:hover {
+  color: var(--gold-t);
+}
+summary:after {
+  font-size: 2.4rem;
+}
+
+/* Formulário: dicas curtas abaixo dos campos */
+.hint {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--soft);
+}
+.opt {
+  font-weight: 400;
+  color: var(--soft);
+}
+.cform-actions .hint {
+  flex-basis: 100%;
+  margin-top: 0;
+}
+.cform [aria-invalid="true"] {
+  border-color: #b3261e;
+  border-width: 2px;
+}
+.cinfo .btn {
+  margin-top: 20px;
+}
