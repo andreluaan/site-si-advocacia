@@ -3,11 +3,12 @@
   max-width: 1560px;
   padding-inline: clamp(16px, 3vw, 40px);
 }
+/* ritmo vertical único: todas as seções com o mesmo respiro */
 section {
-  padding-block: clamp(56px, 8vw, 112px);
+  padding-block: clamp(48px, 6vw, 88px);
 }
 h2 {
-  max-width: 18ch;
+  max-width: 22ch;
 }
 header,
 header.solid,
@@ -86,7 +87,10 @@ footer li,
   padding-bottom: 0;
 }
 .page-h h1 {
-  font-size: clamp(3.5rem, 14vw, 14rem);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+}
+.team-list {
+  padding-top: clamp(32px, 4vw, 56px);
 }
 .team {
   display: grid;

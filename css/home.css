@@ -260,7 +260,7 @@ footer [data-social] a {
   margin-top: clamp(28px, 4vw, 56px);
 }
 .shot {
-  min-height: 260px;
+  min-height: 220px;
   border-radius: 2px;
   background-color: var(--ph2);
   filter: saturate(0.85) sepia(0.08);
@@ -268,10 +268,14 @@ footer [data-social] a {
 @media (min-width: 900px) {
   .photo-grid {
     grid-template-columns: 7fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    height: min(56vh, 520px);
+  }
+  .shot {
+    min-height: 0;
   }
   .s1 {
     grid-row: span 2;
-    min-height: 540px;
   }
 }
 
