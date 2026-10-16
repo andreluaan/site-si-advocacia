@@ -47,7 +47,7 @@
 
   /* SKIP */
   const SKIP = `
-    <a class="skip" href="${B}#main">Pular para o conteúdo</a>
+    <a class="skip" href="#main">Pular para o conteúdo</a>
   `;
 
   /* HEADER */
@@ -55,7 +55,7 @@
     <header id="hd">
       <div class="wrap hb">
         <a class="logo" href="${B}#topo" aria-label="SI Advocacia, início"
-          ><svg><use href="${B}#logo" /></svg><span data-s="name">SI Advocacia</span></a
+          ><svg aria-hidden="true"><use href="#logo" /></svg><span data-s="name">SI Advocacia</span></a
         >
         <nav aria-label="Principal">
           <ul>
@@ -70,7 +70,9 @@
         <div class="hr">
           <span class="soc" data-social="icon"></span
           >
-          <button class="mb" id="mbtn" aria-expanded="false" aria-controls="mp">Menu</button>
+          <button class="mb" id="mbtn" type="button" aria-expanded="false" aria-controls="mp">
+            Menu
+          </button>
         </div>
       </div>
     </header>
@@ -153,7 +155,7 @@
   /* FLOAT */
   const FLOAT = `
     <a class="btn fl wa" id="fl" data-pos="float" href="#" aria-label="Falar no WhatsApp"
-      ><svg class="ico"><use href="${B}#wa" /></svg>Falar no WhatsApp</a
+      ><svg class="ico" aria-hidden="true"><use href="#wa" /></svg>Falar no WhatsApp</a
     >
   `;
 
@@ -165,8 +167,8 @@
         <a href="#privacidade" style="color: var(--accent)">Política de Privacidade</a>.
       </p>
       <div>
-        <button class="btn" data-c="1">Aceitar</button
-        ><button class="btn sec" data-c="0">Recusar</button>
+        <button class="btn" type="button" data-c="1">Aceitar</button
+        ><button class="btn sec" type="button" data-c="0">Recusar</button>
       </div>
     </div>
   `;

@@ -1,7 +1,6 @@
 /* Utilitários, WhatsApp e preenchimento de dados */
 const $ = (s, r = document) => r.querySelector(s),
   $$ = (s, r = document) => [...r.querySelectorAll(s)];
-document.documentElement.classList.add("js");
 const trackEvent = (e, p) => {
   try {
     if (localStorage.getItem("ck") === "1") {

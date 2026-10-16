@@ -38,6 +38,9 @@
     </script>
     <meta name="theme-color" content="#FBFAF7" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <link
       rel="preload"
       href="assets/fonts/cormorant-garamond-latin-500-normal.woff2"
@@ -66,18 +69,8 @@
     <main id="main">
       <section class="hero" id="topo" aria-labelledby="h1">
         <div class="bg" data-px="0.1" data-photo="assets/img/hero.webp">
-          <!-- TODO: gravar vídeo 8-12 s (MP4 + WebM, ≤1,5 MB, sem áudio): pessoas reais, mãos, escuta, escritório acolhedor, luz natural. Criar também assets/img/hero-poster.webp e usar no atributo poster. -->
-          <video
-            id="hv"
-            muted
-            loop
-            playsinline
-            preload="none"
-            aria-hidden="true"
-            tabindex="-1"
-            data-mp4="assets/video/hero.mp4"
-            data-webm="assets/video/hero.webm"
-          ></video>
+          <!-- O vídeo só é carregado se SITE.heroVideo estiver preenchido em js/site.js -->
+          <video id="hv" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
         </div>
         <svg class="crest" viewBox="0 0 60 70" aria-hidden="true">
           <path d="M30 3 6 10v24c0 16 11 28 24 33 13-5 24-17 24-33V10z" />

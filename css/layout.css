@@ -105,9 +105,6 @@ footer li,
     sans-serif;
   cursor: pointer;
 }
-.vbtn[hidden] {
-  display: none;
-}
 .page-h {
   padding-top: calc(96px + clamp(40px, 8vw, 120px));
   padding-bottom: 0;

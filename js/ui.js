@@ -37,21 +37,29 @@ addEventListener("keydown", (e) => {
     }
   }
 });
-/* reveal */
+/* reveal (.mask nasce 100% recortado e nunca "intersecta", por isso observamos o pai dele) */
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const revealObserver = new IntersectionObserver(
   (es) =>
     es.forEach((e) => {
       if (e.isIntersecting) {
-        const position = [...e.target.parentElement.children].indexOf(e.target);
-        e.target.style.transitionDelay = Math.min(position, 3) * 90 + "ms";
-        e.target.classList.add("in");
+        const els = e.target.matches(".rv:not(.mask)") ? [e.target] : [];
+        els.push(...e.target.querySelectorAll(":scope > .mask"));
+        els.forEach((el) => {
+          const position = [...el.parentElement.children].indexOf(el);
+          el.style.transitionDelay = Math.min(position, 3) * 90 + "ms";
+          el.classList.add("in");
+        });
         revealObserver.unobserve(e.target);
       }
     }),
   { threshold: 0.12 },
 );
-$$(".rv").forEach((el) => (reducedMotion ? el.classList.add("in") : revealObserver.observe(el)));
+$$(".rv, .mask").forEach((el) =>
+  reducedMotion
+    ? el.classList.add("in")
+    : revealObserver.observe(el.classList.contains("mask") ? el.parentElement : el),
+);
 /* parallax (desativado em mobile e com movimento reduzido) */
 if (!reducedMotion && matchMedia("(min-width:768px)").matches) {
   const layers = $$("[data-px]").map((el) => ({

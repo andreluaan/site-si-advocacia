@@ -88,13 +88,18 @@ const SITE = {
   email: "santosideao@gmail.com",
   mapsUrl: "",
   mapsEmbed: "",
+  /* Vídeo de fundo do topo. Ex.: { mp4: "assets/video/hero.mp4", webm: "assets/video/hero.webm" } */
+  heroVideo: null,
   formEndpoint: "",
   feesText:
     "Os honorários são definidos de forma transparente, conforme a natureza e a complexidade de cada caso, e apresentados com clareza antes da contratação.",
 };
-const todo = [];
-JSON.stringify(SITE, (k, v) => {
-  if (typeof v === "string" && /\[.+\]/.test(v)) todo.push(k);
-  return v;
-});
-if (todo.length) console.warn("TODO pendentes em SITE:", todo.join(", "));
+/* Lista os campos ainda entre colchetes, só ao rodar no computador (não aparece para o visitante) */
+if (location.protocol === "file:" || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+  const todo = [];
+  JSON.stringify(SITE, (k, v) => {
+    if (typeof v === "string" && /\[.+\]/.test(v)) todo.push(k);
+    return v;
+  });
+  if (todo.length) console.info("Campos a preencher em js/site.js:", todo.join(", "));
+}

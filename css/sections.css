@@ -81,9 +81,6 @@ nav a.l:hover {
   gap: 6px;
   overflow: auto;
 }
-#mp[hidden] {
-  display: none;
-}
 #mp a.l {
   display: flex;
   align-items: center;
@@ -604,9 +601,6 @@ body.cb .fl {
   gap: 12px;
   max-width: 720px;
   font-size: 1rem;
-}
-#ck[hidden] {
-  display: none;
 }
 #ck p {
   max-width: none;
