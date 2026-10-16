@@ -14,7 +14,7 @@
 
   panelBox.innerHTML = SITE.situations
     .map(
-      (s) => `<article class="sit-panel" id="sit-${s.id}" hidden>
+      (s) => `<article class="sit-panel" id="sit-${s.id}">
         <h3>${s.title}</h3>
         <p>${s.text}</p>
         <h4>O que levar na primeira conversa</h4>
@@ -28,7 +28,13 @@
   const panels = [...panelBox.querySelectorAll(".sit-panel")];
   const select = (id) => {
     buttons.forEach((b) => b.setAttribute("aria-pressed", b.dataset.id === id));
-    panels.forEach((p) => (p.hidden = p.id !== "sit-" + id));
+    // os painéis ficam empilhados no mesmo lugar e trocam com fade (sem a página pular)
+    panels.forEach((p) => {
+      const active = p.id === "sit-" + id;
+      p.classList.toggle("on", active);
+      p.inert = !active;
+      p.setAttribute("aria-hidden", !active);
+    });
   };
   // no celular o painel fica abaixo dos botões: rolamos até ele para a pessoa ver a resposta
   const stacked = matchMedia("(max-width: 899px)");

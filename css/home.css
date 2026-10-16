@@ -120,19 +120,21 @@ body {
 .sit-btn {
   display: grid;
   gap: 4px;
-  min-height: 84px;
-  padding: 18px 22px;
+  min-height: 76px;
+  padding: 16px 22px;
   text-align: left;
   font: inherit;
   color: var(--ink);
   background: var(--bg);
   border: 1.5px solid var(--line);
   border-radius: 2px;
+  box-shadow: inset 0 0 0 var(--gold);
   cursor: pointer;
   transition:
-    background 0.25s,
-    color 0.25s,
-    transform 0.25s;
+    background 0.35s,
+    border-color 0.35s,
+    box-shadow 0.35s,
+    transform 0.35s;
 }
 .sit-btn b {
   font:
@@ -148,19 +150,42 @@ body {
   transform: translateX(6px);
 }
 .sit-btn[aria-pressed="true"] {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
+  background: var(--bg-alt);
+  border-color: var(--gold);
+  box-shadow: inset 4px 0 0 var(--gold);
 }
-.sit-btn[aria-pressed="true"] span {
-  color: inherit;
-  opacity: 0.8;
+.sit-panels {
+  display: grid;
 }
+/* painéis empilhados na mesma célula: a troca é um fade, sem mudar a altura da página */
 .sit-panel {
-  padding: clamp(24px, 4vw, 48px);
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.4s,
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    visibility 0s 0.4s;
+  padding: clamp(24px, 3vw, 40px);
   background: var(--bg-alt);
   border-top: 3px solid var(--gold);
   border-radius: 2px;
+}
+.sit-panel.on {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+.sit-panel .btn {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--gold);
+}
+.sit-panel .btn:hover {
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+  box-shadow: none;
 }
 .sit-panel h3 {
   margin-bottom: 0.8rem;
@@ -430,7 +455,6 @@ header :focus-visible {
 .sit-btn:hover i,
 .sit-btn[aria-pressed="true"] i {
   transform: translateX(4px);
-  color: inherit;
 }
 .sit-panel {
   scroll-margin-top: 96px;
