@@ -60,6 +60,11 @@ $$(".rv, .mask").forEach((el) =>
     ? el.classList.add("in")
     : revealObserver.observe(el.classList.contains("mask") ? el.parentElement : el),
 );
+/* Vindo de outra página com #seção: realinha depois que fotos e fontes carregam */
+addEventListener("load", () => {
+  const target = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+  if (target) target.scrollIntoView({ behavior: "instant" });
+});
 /* parallax (desativado em mobile e com movimento reduzido) */
 if (!reducedMotion && matchMedia("(min-width:768px)").matches) {
   const layers = $$("[data-px]").map((el) => ({
