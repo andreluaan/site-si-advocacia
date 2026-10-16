@@ -124,6 +124,16 @@ section {
   color: inherit;
   border-color: currentColor;
 }
+.btn.soft {
+  /* contorno dourado sem fundo cheio: usado nos botões de WhatsApp secundários */
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--gold);
+}
+.btn.soft:hover {
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+  box-shadow: none;
+}
 .btn.sm {
   min-height: 48px;
   padding: 0 18px;

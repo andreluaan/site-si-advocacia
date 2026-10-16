@@ -172,8 +172,9 @@
 
   /* FLOAT */
   const FLOAT = `
-    <a class="btn fl wa" id="fl" data-pos="float" href="#" aria-label="Falar no WhatsApp"
-      ><svg class="ico" aria-hidden="true"><use href="#wa" /></svg>Falar no WhatsApp</a
+    <a class="btn soft fl wa" id="fl" data-pos="float" href="#" aria-label="Falar no WhatsApp"
+      title="Falar no WhatsApp"
+      ><svg class="ico" aria-hidden="true"><use href="#wa" /></svg></a
     >
   `;
 

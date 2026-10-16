@@ -462,12 +462,25 @@ footer a:hover {
   right: max(16px, env(safe-area-inset-right));
   bottom: calc(16px + env(safe-area-inset-bottom, 0px));
   z-index: 40;
-  min-height: 60px;
+  /* só o ícone, num botão redondo, para não cobrir o conteúdo */
+  width: 56px;
+  min-height: 56px;
+  padding: 0;
+  justify-content: center;
+  border-radius: 50%;
   box-shadow: var(--sh);
   transform: translateY(140%);
   transition:
     transform 0.4s,
     bottom 0.3s;
+}
+.fl.soft,
+.fl.soft:hover {
+  background: var(--bg);
+}
+.fl svg {
+  width: 28px;
+  height: 28px;
 }
 .fl.on {
   transform: none;

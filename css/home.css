@@ -178,15 +178,6 @@ body {
   transform: none;
   transition-delay: 0s;
 }
-.sit-panel .btn {
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--gold);
-}
-.sit-panel .btn:hover {
-  background: color-mix(in srgb, var(--gold) 14%, transparent);
-  box-shadow: none;
-}
 .sit-panel h3 {
   margin-bottom: 0.8rem;
 }

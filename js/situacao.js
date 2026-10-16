@@ -19,7 +19,7 @@
         <p>${s.text}</p>
         <h4>O que levar na primeira conversa</h4>
         <ul>${s.docs.map((d) => `<li>${d}</li>`).join("")}</ul>
-        <a class="btn wa" data-pos="situacao" data-msg="${s.msg}" href="#"><svg class="ico"><use href="#wa"/></svg>Falar no WhatsApp sobre isso</a>
+        <a class="btn soft wa" data-pos="situacao" data-msg="${s.msg}" href="#"><svg class="ico"><use href="#wa"/></svg>Falar no WhatsApp sobre isso</a>
       </article>`,
     )
     .join("");
