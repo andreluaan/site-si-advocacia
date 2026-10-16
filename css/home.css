@@ -502,6 +502,25 @@ summary:after {
   }
 }
 
+/* ---------- Dúvidas: título à esquerda, perguntas à direita ---------- */
+@media (min-width: 900px) {
+  #duvidas .wrap {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    column-gap: clamp(32px, 5vw, 96px);
+    align-items: start;
+  }
+  #duvidas .lab,
+  #duvidas h2 {
+    grid-column: 1;
+  }
+  #duvidas .faq {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin-top: 0;
+  }
+}
+
 /* ---------- Moldura das fotos de pessoas (Sobre e Equipe) ----------
    Linha dourada deslocada atrás da foto + filete claro por dentro. As linhas
    aparecem junto com a foto (quando ela recebe .in da animação de revelar). */

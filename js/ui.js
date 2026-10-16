@@ -60,6 +60,39 @@ $$(".rv, .mask").forEach((el) =>
     ? el.classList.add("in")
     : revealObserver.observe(el.classList.contains("mask") ? el.parentElement : el),
 );
+/* Dúvidas: abre e fecha com animação e mantém só uma resposta aberta por vez */
+const faqItems = $$(".faq details");
+const animateAnswer = (item, open) => {
+  const answer = item.querySelector("p");
+  item.dataset.state = open ? "open" : "closed";
+  if (item.anim) item.anim.cancel();
+  if (reducedMotion || !answer.animate) {
+    item.open = open;
+    return;
+  }
+  item.open = true;
+  const closed = { height: "0px", paddingBottom: "0px", opacity: 0 },
+    full = { height: answer.offsetHeight + "px", paddingBottom: getComputedStyle(answer).paddingBottom, opacity: 1 };
+  answer.style.overflow = "hidden";
+  item.anim = answer.animate(open ? [closed, full] : [full, closed], {
+    duration: 300,
+    easing: "cubic-bezier(0.2, 0.7, 0.2, 1)",
+  });
+  item.anim.onfinish = () => {
+    answer.style.overflow = "";
+    item.open = open;
+    item.anim = null;
+  };
+};
+faqItems.forEach((item) =>
+  item.querySelector("summary").addEventListener("click", (e) => {
+    e.preventDefault();
+    const willOpen = item.dataset.state !== "open";
+    if (willOpen)
+      faqItems.forEach((other) => other !== item && other.open && animateAnswer(other, false));
+    animateAnswer(item, willOpen);
+  }),
+);
 /* Vindo de outra página com #seção: realinha depois que fotos e fontes carregam */
 addEventListener("load", () => {
   const target = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
