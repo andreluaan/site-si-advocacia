@@ -52,7 +52,7 @@ $$('a[href$="#privacidade"]').forEach((a) =>
 $$("[data-offices]").forEach(
   (el) =>
     (el.innerHTML = SITE.offices
-      .map((o) => `<li><b>${o.city} – ${o.uf}</b><br>${o.addr}</li>`)
+      .map((o) => `<li><b>${o.city} – ${o.uf}</b><span class="of-addr">${o.addr}</span></li>`)
       .join("")),
 );
 const SOCIAL_ICONS = {

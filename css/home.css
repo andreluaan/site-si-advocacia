@@ -564,3 +564,191 @@ summary:after {
   display: block;
   width: 100%;
 }
+
+/* ---------- Celular: menos texto na tela ----------
+   Some o que é repetido ou secundário; o essencial de cada seção continua. */
+.of-addr {
+  display: block;
+}
+@media (max-width: 899px) {
+  .desk,
+  .ficha /* o "o que levar" já aparece em "Conte sua situação" */,
+  .trust,
+  .sit-lead,
+  .sit-btn span,
+  .sit-panel > p,
+  .tags,
+  .bars b,
+  .pil p,
+  .ct-lead,
+  footer .fc > div:nth-child(3) /* navegação: já está no menu */,
+  .of-addr {
+    display: none;
+  }
+  .hero {
+    min-height: auto;
+    padding-block: 120px 56px;
+  }
+  .sit-btn {
+    min-height: 60px;
+    padding: 14px 18px;
+  }
+  .sit-panel h4 {
+    margin-top: 0.6rem;
+  }
+  .row {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  .row .link {
+    white-space: nowrap;
+  }
+  .bars li {
+    gap: 2px;
+  }
+  .bd {
+    font-size: 1rem;
+  }
+  .pil {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .pil div {
+    padding: 20px 16px;
+  }
+  .pil svg {
+    width: 30px;
+    height: 30px;
+  }
+  .pil h3 {
+    font-size: 1.25rem;
+  }
+  /* rodapé: cidades das unidades lado a lado, sem os endereços */
+  .fc {
+    gap: 28px;
+  }
+  [data-offices] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+  }
+  [data-offices] li {
+    margin: 0;
+  }
+  /* fotos do escritório: a fachada em cima, recepção e sala lado a lado */
+  .photo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .shot {
+    min-height: 150px;
+  }
+  .s1 {
+    grid-column: 1 / -1;
+    min-height: 220px;
+  }
+
+  /* Sobre: foto pequena ao lado do nome, como um cartão de identificação */
+  .sob {
+    grid-template-columns: 88px 1fr;
+    gap: 0 16px;
+    align-items: center;
+  }
+  .sob-text {
+    display: contents;
+  }
+  .sob-text > * {
+    grid-column: 1 / -1;
+  }
+  .sob .frame {
+    order: 1;
+    grid-column: 1;
+    max-width: none;
+    margin-top: 1.6rem;
+  }
+  .sob .oab {
+    order: 2;
+    grid-column: 2;
+    margin-top: 1.6rem;
+    padding: 0;
+    border: 0;
+  }
+  .oab > span {
+    display: block;
+  }
+  .oab > .oab-sep {
+    display: none;
+  }
+  .oab-name {
+    font:
+      500 1.35rem/1.2 "Cormorant Garamond",
+      Georgia,
+      serif;
+  }
+  .oab > span:last-child {
+    margin-top: 2px;
+    font-size: 0.9rem;
+    color: var(--soft);
+  }
+
+  /* Equipe: mesma ideia, foto ao lado do nome e da OAB */
+  .mem {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    column-gap: 16px;
+    align-items: center;
+  }
+  .mem .frame {
+    grid-row: 1 / span 2;
+    margin-bottom: 0;
+  }
+  .mem > :not(.frame) {
+    grid-column: 2;
+  }
+  .mem > .ar,
+  .mem > p:not(.oabl),
+  .mem > .btn {
+    grid-column: 1 / -1;
+  }
+  .mem > .oabl {
+    font-size: 0.9rem;
+  }
+  .mem > .ar {
+    margin-top: 1.2rem;
+  }
+  .mem > .btn {
+    justify-self: start;
+  }
+
+  /* moldura proporcional às fotos pequenas */
+  .sob .frame,
+  .mem .frame {
+    --off: 6px;
+  }
+  .sob .frame::after,
+  .mem .frame::after {
+    inset: 4px;
+  }
+
+  /* aviso de cookies em uma faixa baixa */
+  #ck {
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    font-size: 0.9rem;
+  }
+  #ck p {
+    flex: 1;
+  }
+  #ck div {
+    flex: none;
+    gap: 8px;
+  }
+  #ck .btn {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.95rem;
+  }
+  body.cb .fl {
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  }
+}

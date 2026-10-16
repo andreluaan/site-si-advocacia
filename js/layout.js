@@ -181,8 +181,8 @@
   const COOKIES = `
     <div id="ck" role="region" aria-label="Cookies" hidden>
       <p>
-        Usamos cookies de medição apenas se você permitir. Veja a
-        <a href="#privacidade">Política de Privacidade</a>.
+        Usamos cookies de medição só se você permitir.
+        <a href="#privacidade">Saiba mais</a>
       </p>
       <div>
         <button class="btn" type="button" data-c="1">Aceitar</button
