@@ -30,9 +30,13 @@
     buttons.forEach((b) => b.setAttribute("aria-pressed", b.dataset.id === id));
     panels.forEach((p) => (p.hidden = p.id !== "sit-" + id));
   };
+  // no celular o painel fica abaixo dos botões: rolamos até ele para a pessoa ver a resposta
+  const stacked = matchMedia("(max-width: 899px)");
   choose.addEventListener("click", (e) => {
     const button = e.target.closest(".sit-btn");
-    if (button) select(button.dataset.id);
+    if (!button) return;
+    select(button.dataset.id);
+    if (stacked.matches) document.getElementById("sit-" + button.dataset.id).scrollIntoView({ block: "start" });
   });
   select(SITE.situations[0].id);
 })();

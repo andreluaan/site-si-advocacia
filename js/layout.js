@@ -120,6 +120,7 @@
               <li><a href="equipe.html">Equipe</a></li>
               <li><a href="${B}#sobre">Sobre</a></li>
               <li><a href="${B}#duvidas">Dúvidas</a></li>
+              <li><a href="${B}#contato">Contato</a></li>
             </ul>
           </div>
           <div>

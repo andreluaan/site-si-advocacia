@@ -9,8 +9,9 @@ const trackEvent = (e, p) => {
   } catch (_) {}
 };
 /* WhatsApp */
+const intlPhone = (p) => "55" + p.replace(/\D/g, "").replace(/^0+/, "");
 function buildWhatsAppLink({ area, texto } = {}) {
-  const n = "55" + SITE.phone.replace(/\D/g, "").replace(/^0+/, "");
+  const n = intlPhone(SITE.phone);
   const m = texto || "Olá! Gostaria de atendimento" + (area ? " sobre " + area : "") + ".";
   return "https://wa.me/" + n + "?text=" + encodeURIComponent(m);
 }
@@ -20,6 +21,7 @@ $$("a.wa").forEach((a) => {
   a.rel = "noopener noreferrer";
   a.addEventListener("click", () => trackEvent("click_whatsapp", { position: a.dataset.pos }));
 });
+$$("a[data-tel]").forEach((a) => (a.href = "tel:+" + intlPhone(SITE.phone)));
 $$("[data-ev]").forEach((a) => a.addEventListener("click", () => trackEvent(a.dataset.ev)));
 /* dados */
 const getByPath = (p) => p.split(".").reduce((o, k) => o && o[k], SITE);
@@ -31,9 +33,19 @@ $$("[data-s]").forEach((el) => {
 });
 ($("#mapl") || {}).href =
   SITE.mapsUrl ||
-  "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent("R. do Prado, 981, Liberdade, Patos, PB");
+  "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(SITE.address);
 $("#yr").textContent = new Date().getFullYear();
+
+/* Links para a Política de Privacidade abrem o texto (fica dentro de um <details> no rodapé) */
+const openPrivacy = () => {
+  const d = $("#privacidade");
+  if (d && location.hash === "#privacidade") d.open = true;
+};
+addEventListener("hashchange", openPrivacy);
+openPrivacy();
+$$('a[href$="#privacidade"]').forEach((a) =>
+  a.addEventListener("click", () => ($("#privacidade").open = true)),
+);
 
 /* unidades e redes sociais (vêm de site.js) */
 $$("[data-offices]").forEach(

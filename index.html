@@ -96,7 +96,13 @@
               <div class="ctas">
                 <a class="btn wa" data-pos="hero" href="#"
                   ><svg class="ico"><use href="#wa" /></svg>Falar no WhatsApp</a
-                ><a class="btn sec" href="#areas">Conhecer as áreas de atuação</a>
+                ><a class="btn sec" data-tel href="#" data-ev="click_phone"
+                  ><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"
+                    /></svg
+                  >Ligar para o escritório</a
+                >
               </div>
             </div>
             <aside class="ficha" aria-label="Exemplo: o que levar na primeira conversa">
@@ -390,34 +396,41 @@
           <div class="ct">
             <form id="f" class="cform" novalidate>
               <div>
-                <label for="nm">Nome</label>
+                <label for="nm">Seu nome</label>
                 <input id="nm" name="nome" autocomplete="name" required aria-describedby="e-nm" />
                 <div class="err" id="e-nm" role="alert"></div>
               </div>
               <div>
-                <label for="wp">WhatsApp</label>
+                <label for="wp">Seu WhatsApp, com DDD</label>
                 <input
                   id="wp"
                   name="wp"
+                  type="tel"
                   inputmode="tel"
                   autocomplete="tel"
-                  placeholder="(00) 00000-0000"
+                  placeholder="(83) 99999-9999"
                   required
-                  aria-describedby="e-wp"
+                  aria-describedby="h-wp e-wp"
                 />
+                <p class="hint" id="h-wp">Só os números. Nós completamos o formato.</p>
                 <div class="err" id="e-wp" role="alert"></div>
               </div>
               <div class="full">
-                <label for="ar">Área de interesse</label>
+                <label for="ar">Assunto</label>
                 <select id="ar">
-                  <option>Previdenciário</option>
-                  <option>Trabalhista</option>
-                  <option selected>Não sei</option>
+                  <option selected>Não sei / prefiro explicar</option>
+                  <option>INSS, aposentadoria ou benefício</option>
+                  <option>Trabalho</option>
+                  <option>Outro assunto</option>
                 </select>
               </div>
               <div class="full">
-                <label for="ms">Mensagem curta</label>
-                <textarea id="ms" maxlength="400"></textarea>
+                <label for="ms">Conte em poucas palavras <span class="opt">(opcional)</span></label>
+                <textarea
+                  id="ms"
+                  maxlength="400"
+                  placeholder="Ex.: Meu auxílio foi cortado em março."
+                ></textarea>
               </div>
               <div class="hp" aria-hidden="true">
                 <label for="hp">Não preencha</label>
@@ -437,6 +450,7 @@
                 <button class="btn" type="submit">
                   <svg class="ico"><use href="#wa" /></svg>Enviar pelo WhatsApp
                 </button>
+                <p class="hint">O WhatsApp vai abrir com a sua mensagem pronta. É só tocar em enviar.</p>
                 <p id="st" role="status" aria-live="polite"></p>
               </div>
             </form>
@@ -452,21 +466,18 @@
                 </div>
                 <div>
                   <dt>Prefere ligar?</dt>
-                  <dd><a href="tel:+5583998489750" data-ev="click_phone">(83) 99848-9750</a></dd>
+                  <dd><a data-tel data-ev="click_phone" href="#">(83) 99848-9750</a></dd>
                 </div>
               </dl>
-              <div class="map" id="map">
-                Mapa disponível em breve.
-                <!-- TODO: mapsEmbed -->
-              </div>
+              <div class="map" id="map" hidden></div>
               <a
-                class="link"
+                class="btn sec"
                 id="mapl"
                 data-ev="click_maps"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="#"
-                >Como chegar <span aria-hidden="true">→</span></a
+                >Ver no mapa como chegar <span aria-hidden="true">→</span></a
               >
             </aside>
           </div>
