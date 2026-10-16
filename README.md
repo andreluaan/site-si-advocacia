@@ -1,45 +1,46 @@
-# SI Advocacia – landing page
+# SI Advocacia – site institucional
+
+Site estático (HTML, CSS e JavaScript puro, sem dependências) do escritório SI Advocacia, de Direito Previdenciário e do Trabalho, com sede em Patos-PB.
+
+## Páginas
+
+- `index.html` – página inicial: apresentação, "Conte sua situação", áreas de atuação, como funciona, compromissos, sobre, fotos do escritório, dúvidas frequentes e contato.
+- `equipe.html` – equipe do escritório.
+
+O cabeçalho, o menu do celular, o rodapé, o botão flutuante de WhatsApp e o aviso de cookies são montados por `js/layout.js` e valem para as duas páginas.
+
+## Onde editar
+
+| O quê | Arquivo |
+| --- | --- |
+| Telefones, endereços, e-mail, redes sociais, equipe, situações, mapa, vídeo | `js/site.js` |
+| Fotos | `assets/img` (nomes e tamanhos em `assets/img/LEIA-ME.txt`) |
+| Cores e tema claro/escuro | `css/tokens.css` |
+| Textos das seções | `index.html` e `equipe.html` |
+
+Os links de WhatsApp e de telefone são gerados a partir de `SITE.phone`. Ao abrir o site no computador, o console lista os campos de `js/site.js` que ainda estão entre colchetes, como `[Nº]`.
 
 ## Estrutura
-- `index.html` – marcação das seções
-- `css/tokens.css` – cores, raios, sombras (tema claro e escuro)
-- `css/base.css` – reset, tipografia, botões
-- `css/sections.css` – header, hero, áreas, passos, FAQ, contato, rodapé
-- `js/site.js` – **dados do escritório** (edite aqui)
-- `js/core.js` – WhatsApp (`buildWhatsAppLink`) e preenchimento de dados
-- `js/ui.js` – menu, reveal e parallax · `js/form.js` – mapa e formulário · `js/cookies.js` – banner LGPD
-- `assets/` – logo e favicon (placeholders)
+
+```
+css/   tokens, base, sections, layout, motion, editorial, home, fonts
+js/    site (dados) · layout · core (WhatsApp e dados) · ui (menu e animações)
+       situacao · hero (vídeo) · form (contato e mapa) · cookies · team · photos
+assets/ logo, favicon, fontes e fotos
+```
+
+## Funcionamento
+
+- **Contato:** o formulário não envia e-mail. Ele abre o WhatsApp com a mensagem pronta. Se `SITE.formEndpoint` estiver preenchido, uma cópia também é enviada para esse endereço.
+- **Fotos:** cada espaço de foto usa o arquivo de `assets/img`, se ele existir. A seção "O escritório" só aparece quando há pelo menos uma foto.
+- **Mapa e vídeo:** só aparecem quando `SITE.mapsEmbed` e `SITE.heroVideo` estão preenchidos.
+- **Cookies (LGPD):** medições só acontecem depois que o visitante clica em "Aceitar".
+- **Acessibilidade:** navegação por teclado, link "Pular para o conteúdo", tamanhos de toque grandes e respeito à opção de reduzir animações do sistema.
 
 ## Como rodar
-Abra `index.html` no navegador, ou rode `npx serve .` dentro da pasta.
 
-## Pendências (TODO)
-Nome do advogado e OAB, e-mail, número/bairro/CEP, links do Google Maps (`mapsUrl`, `mapsEmbed`), fotos reais (hero, retrato, escritório), lista oficial de serviços, passos e pilares do briefing, política de privacidade completa, GA4/GTM.
-O console do navegador lista os campos de `site.js` ainda não preenchidos.
+Abra `index.html` no navegador, ou sirva a pasta com qualquer servidor estático (por exemplo `npx serve .`).
 
-## Deploy
-Envie a pasta inteira para Netlify, Vercel ou Cloudflare Pages (site estático).
+## Publicação
 
-**Valide todos os textos finais com o advogado responsável (regras da OAB e LGPD).**
-
-## Atualização v3
-- Novas pastas/arquivos: `css/layout.css` (layout largo e assimétrico), `css/motion.css` (animações), `js/layout.js` (header, menu, rodapé, WhatsApp flutuante e cookies compartilhados), `js/hero.js` (vídeo), `js/team.js`, `equipe.html`.
-- Paleta da marca em `css/tokens.css` (estimada a partir do print do site antigo; ajuste os hex se tiver o manual de marca).
-- **Vídeo do hero:** salve `assets/video/hero.mp4` e `hero.webm` (8–12 s, sem áudio, ≤ 1,5 MB) e um poster `assets/img/hero-poster.webp`. Sem os arquivos, o hero mostra só o fundo estático.
-- **Equipe:** edite o array `team` em `js/site.js` (nome, OAB, áreas, bio, foto).
-- Sem JavaScript, header e rodapé não aparecem (há um aviso com links no `<noscript>`).
-
-## Botões de WhatsApp (regra do projeto)
-Só aparecem onde ajudam: botão principal no hero, na faixa de CTA e na equipe; link de texto nos dois cards de área e no rodapé; botão flutuante no celular (some quando a faixa de CTA ou o contato estão na tela). O header não tem botão de WhatsApp. Instagram e Facebook aparecem só como ícone no header e no menu (com `aria-label` para leitores de tela) e com nome no contato e no rodapé.
-
-## Design editorial (referência Lovera)
-`css/editorial.css` concentra: seções escuras (`.dark`), nome gigante no hero e no rodapé, áreas em linhas (`.rows`) e processo em barras (`.bars`). Para mudar as cores das barras, edite as 4 cores em `.bars li:nth-child(n)`.
-
-## Recomeço visual (v4)
-- Fontes agora ficam em `assets/fonts` (carregadas por `css/fonts.css`), sem depender do Google.
-- `css/tokens.css`: paleta de papel quente + grafite + dourado, com textura de grão.
-- `css/home.css`: hero com "ficha de atendimento", seção "Qual é a sua situação?", cookies em barra fina.
-- `js/situacao.js` + array `situations` em `js/site.js`: textos e documentos de cada situação.
-
-## Fotos
-Soltar os arquivos em `assets/img` (nomes em `assets/img/LEIA-ME.txt`). `js/photos.js` troca o espaço reservado pela foto se o arquivo existir. A seção "O escritório" só aparece quando há pelo menos uma foto. Preferir fotos próprias do escritório e da equipe.
+Envie a pasta inteira para um serviço de site estático (Netlify, Vercel, Cloudflare Pages ou similar).
