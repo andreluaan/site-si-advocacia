@@ -69,9 +69,6 @@
         </nav>
         <div class="hr">
           <span class="soc" data-social="icon"></span>
-          <a class="btn sm wa hwa" data-pos="header" href="#"
-            ><svg class="ico" aria-hidden="true"><use href="#wa" /></svg>WhatsApp</a
-          >
           <button class="mb" id="mbtn" type="button" aria-expanded="false" aria-controls="mp">
             Menu
           </button>
@@ -91,9 +88,6 @@
       ><a class="l" href="equipe.html">Equipe</a><a class="l" href="${B}#sobre">Sobre</a
       ><a class="l" href="${B}#duvidas">Dúvidas</a
       ><a class="l" href="${B}#contato">Contato</a>
-      <a class="btn wa mwa" data-pos="menu" href="#"
-        ><svg class="ico" aria-hidden="true"><use href="#wa" /></svg>Falar no WhatsApp</a
-      >
       <div class="soc" data-social="icon"></div>
     </div>
   `;

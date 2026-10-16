@@ -59,10 +59,14 @@ const SOCIAL_ICONS = {
   Instagram:
     '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/>',
   Facebook: '<path d="M14 8h2V5h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2l1-3h-3V8z"/>',
+  WhatsApp:
+    '<path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.3A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-1.8-1.2-2.2-2.2l.8-1-1-2z"/>',
 };
 $$("[data-social]").forEach((el) => {
-  const iconOnly = el.dataset.social === "icon"; // header/menu: só o ícone
-  el.innerHTML = Object.entries(SITE.social)
+  const iconOnly = el.dataset.social === "icon"; // header/menu: só o ícone, com o WhatsApp junto
+  const links = Object.entries(SITE.social);
+  if (iconOnly) links.unshift(["WhatsApp", buildWhatsAppLink()]);
+  el.innerHTML = links
     .map(
       ([n, u]) =>
         `<a href="${u}" data-net="${n}"${iconOnly ? ` aria-label="${n}" title="${n}"` : ""} target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">${SOCIAL_ICONS[n] || ""}</svg>${iconOnly ? "" : n}</a>`,

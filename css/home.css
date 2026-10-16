@@ -414,24 +414,8 @@ footer [data-social] a {
   }
 }
 
-/* WhatsApp no cabeçalho (computador) e no menu (celular) */
-.hwa {
-  display: none;
-  background: #f3ede2;
-  color: #161513;
-  border-color: #f3ede2;
-}
 header :focus-visible {
   outline-color: #f3ede2;
-}
-@media (min-width: 900px) {
-  .hwa {
-    display: inline-flex;
-  }
-}
-#mp .mwa {
-  justify-content: center;
-  margin-top: 20px;
 }
 
 /* Situações: seta indica que o cartão é clicável */
