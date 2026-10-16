@@ -118,7 +118,9 @@ nav a.l:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(var(--veil1), var(--veil2));
+  /* no celular o texto cobre a foto toda: véu uniforme para manter a leitura
+     (no computador, home.css usa um véu mais forte só do lado do texto) */
+  background: var(--veil2);
 }
 .hero .wrap {
   position: relative;
