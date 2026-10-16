@@ -401,97 +401,107 @@
 
 
       <section id="contato" aria-labelledby="t-ct">
-        <div class="wrap">
-          <p class="lab">07 — Contato</p>
-          <h2 id="t-ct" class="rv">Escreva para nós.</h2>
-          <div class="ct">
-            <form id="f" class="cform" novalidate>
-              <div>
-                <label for="nm">Seu nome</label>
-                <input id="nm" name="nome" autocomplete="name" required aria-describedby="e-nm" />
-                <div class="err" id="e-nm" role="alert"></div>
-              </div>
-              <div>
-                <label for="wp">Seu WhatsApp, com DDD</label>
-                <input
-                  id="wp"
-                  name="wp"
-                  type="tel"
-                  inputmode="tel"
-                  autocomplete="tel"
-                  placeholder="(83) 99999-9999"
-                  required
-                  aria-describedby="h-wp e-wp"
-                />
-                <p class="hint" id="h-wp">Só os números. Nós completamos o formato.</p>
-                <div class="err" id="e-wp" role="alert"></div>
-              </div>
-              <div class="full">
-                <label for="ar">Assunto</label>
-                <select id="ar">
-                  <option selected>Não sei / prefiro explicar</option>
-                  <option>INSS, aposentadoria ou benefício</option>
-                  <option>Trabalho</option>
-                  <option>Outro assunto</option>
-                </select>
-              </div>
-              <div class="full">
-                <label for="ms">Conte em poucas palavras <span class="opt">(opcional)</span></label>
-                <textarea
-                  id="ms"
-                  maxlength="400"
-                  placeholder="Ex.: Meu auxílio foi cortado em março."
-                ></textarea>
-              </div>
-              <div class="hp" aria-hidden="true">
-                <label for="hp">Não preencha</label>
-                <input id="hp" tabindex="-1" autocomplete="off" />
-              </div>
-              <div class="full">
-                <label class="chk" for="lg">
-                  <input type="checkbox" id="lg" aria-describedby="e-lg" />
-                  <span
-                    >Concordo com o uso dos meus dados para retorno do contato, conforme a
-                    <a href="#privacidade">Política de Privacidade</a>.</span
-                  >
-                </label>
-                <div class="err" id="e-lg" role="alert"></div>
-              </div>
-              <div class="full cform-actions">
-                <button class="btn" type="submit">
-                  <svg class="ico"><use href="#wa" /></svg>Enviar pelo WhatsApp
-                </button>
-                <p class="hint">O WhatsApp vai abrir com a sua mensagem pronta. É só tocar em enviar.</p>
-                <p id="st" role="status" aria-live="polite"></p>
-              </div>
-            </form>
-            <aside class="cinfo" aria-label="Como chegar">
-              <dl>
-                <div>
-                  <dt>Sede em Patos</dt>
-                  <dd data-s="addr"></dd>
-                </div>
-                <div>
-                  <dt>Horário</dt>
-                  <dd>Segunda a sexta, das 7h30 às 17h</dd>
-                </div>
-                <div>
-                  <dt>Prefere ligar?</dt>
-                  <dd><a data-tel data-ev="click_phone" href="#">(83) 99848-9750</a></dd>
-                </div>
-              </dl>
-              <div class="map" id="map" hidden></div>
-              <a
-                class="btn sec"
-                id="mapl"
-                data-ev="click_maps"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="#"
-                >Ver no mapa como chegar <span aria-hidden="true">→</span></a
-              >
-            </aside>
+        <div class="wrap ct">
+          <div class="ct-intro">
+            <p class="lab">07 — Contato</p>
+            <h2 id="t-ct" class="rv">Fale com a gente.</h2>
+            <p class="ct-lead">
+              Preencha o formulário e o WhatsApp abre com a sua mensagem pronta. Se preferir, ligue ou
+              venha ao escritório.
+            </p>
+            <ul class="ct-list">
+              <li>
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"
+                  />
+                </svg>
+                <a data-tel data-ev="click_phone" href="#">(83) 99848-9750</a>
+              </li>
+              <li>
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+                <span
+                  ><span data-s="addr"></span><br /><a
+                    id="mapl"
+                    data-ev="click_maps"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="#"
+                    >Ver no mapa <span aria-hidden="true">→</span></a
+                  ></span
+                >
+              </li>
+              <li>
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+                Segunda a sexta, das 7h30 às 17h
+              </li>
+            </ul>
+            <div class="map" id="map" hidden></div>
           </div>
+          <form id="f" class="cform" novalidate>
+            <div>
+              <label for="nm">Seu nome</label>
+              <input id="nm" name="nome" autocomplete="name" required aria-describedby="e-nm" />
+              <div class="err" id="e-nm" role="alert"></div>
+            </div>
+            <div>
+              <label for="wp">Seu WhatsApp, com DDD</label>
+              <input
+                id="wp"
+                name="wp"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel"
+                placeholder="(83) 99999-9999"
+                required
+                aria-describedby="e-wp"
+              />
+              <div class="err" id="e-wp" role="alert"></div>
+            </div>
+            <div class="full">
+              <label for="ar">Assunto</label>
+              <select id="ar">
+                <option selected>Não sei / prefiro explicar</option>
+                <option>INSS, aposentadoria ou benefício</option>
+                <option>Trabalho</option>
+                <option>Outro assunto</option>
+              </select>
+            </div>
+            <div class="full">
+              <label for="ms">Conte em poucas palavras <span class="opt">(opcional)</span></label>
+              <textarea
+                id="ms"
+                maxlength="400"
+                placeholder="Ex.: Meu auxílio foi cortado em março."
+              ></textarea>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="hp">Não preencha</label>
+              <input id="hp" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="full">
+              <label class="chk" for="lg">
+                <input type="checkbox" id="lg" aria-describedby="e-lg" />
+                <span
+                  >Concordo com o uso dos meus dados para retorno do contato, conforme a
+                  <a href="#privacidade">Política de Privacidade</a>.</span
+                >
+              </label>
+              <div class="err" id="e-lg" role="alert"></div>
+            </div>
+            <div class="full cform-actions">
+              <button class="btn" type="submit">
+                <svg class="ico"><use href="#wa" /></svg>Enviar pelo WhatsApp
+              </button>
+              <p id="st" role="status" aria-live="polite"></p>
+            </div>
+          </form>
         </div>
       </section>
     </main>

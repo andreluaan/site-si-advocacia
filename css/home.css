@@ -307,14 +307,6 @@ footer [data-social] a {
 
 
 /* ---------- Contato ---------- */
-#contato {
-  padding-block: clamp(48px, 6vw, 88px);
-}
-.ct {
-  gap: clamp(28px, 4vw, 64px);
-  margin-top: clamp(24px, 3vw, 40px);
-  align-items: start;
-}
 .cform {
   display: grid;
   grid-template-columns: 1fr;
@@ -368,32 +360,7 @@ footer [data-social] a {
   min-height: 0;
   font-weight: 600;
 }
-.cinfo dl {
-  display: grid;
-  gap: 16px;
-}
-.cinfo dt {
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--soft);
-}
-.cinfo dd {
-  margin: 2px 0 0;
-}
-.cinfo dd a {
-  color: var(--accent);
-  font-weight: 600;
-}
-.cinfo .map {
-  aspect-ratio: 16 / 9;
-  margin: 20px 0 8px;
-}
-
 @media (min-width: 900px) {
-  .ct {
-    grid-template-columns: 7fr 5fr;
-  }
   .cform {
     grid-template-columns: 1fr 1fr;
   }
@@ -453,25 +420,13 @@ summary:after {
 }
 
 /* Formulário: dicas curtas abaixo dos campos */
-.hint {
-  margin-top: 6px;
-  font-size: 0.95rem;
-  color: var(--soft);
-}
 .opt {
   font-weight: 400;
   color: var(--soft);
 }
-.cform-actions .hint {
-  flex-basis: 100%;
-  margin-top: 0;
-}
 .cform [aria-invalid="true"] {
   border-color: #b3261e;
   border-width: 2px;
-}
-.cinfo .btn {
-  margin-top: 20px;
 }
 
 /* ---------- Sobre: foto alinhada à altura do texto ---------- */
@@ -518,6 +473,53 @@ summary:after {
     grid-column: 2;
     grid-row: 1 / span 2;
     margin-top: 0;
+  }
+}
+
+/* ---------- Contato: informações à esquerda, formulário à direita ---------- */
+.ct {
+  display: grid;
+  gap: clamp(32px, 5vw, 96px);
+  margin-top: 0;
+}
+.ct-lead {
+  color: var(--soft);
+  margin: 1.2rem 0 2rem;
+  max-width: 40ch;
+}
+.ct-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+}
+.ct-list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.ct-list svg {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  color: var(--gold-t);
+  margin-top: 2px;
+}
+.ct-list a {
+  font-weight: 600;
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+.ct .map {
+  margin-top: 24px;
+}
+.cform {
+  gap: 20px;
+}
+@media (min-width: 900px) {
+  .ct {
+    grid-template-columns: 5fr 7fr;
+    align-items: start;
   }
 }
 
