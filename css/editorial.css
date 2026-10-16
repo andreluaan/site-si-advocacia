@@ -12,9 +12,6 @@
   background: var(--bg);
   color: var(--ink);
 }
-.cta.dark .bg {
-  background: linear-gradient(160deg, #1b1b1e, #2a2a2e);
-}
 
 /* Áreas de atuação em linhas grandes */
 .rows {

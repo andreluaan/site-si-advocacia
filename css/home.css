@@ -236,8 +236,7 @@ body {
 }
 
 /* Redes sociais do rodapé e do contato: ícone com espaço antes do nome */
-footer [data-social] a,
-.info [data-social] a {
+footer [data-social] a {
   display: inline-flex;
   align-items: center;
   gap: 8px;

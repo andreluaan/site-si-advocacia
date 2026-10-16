@@ -23,8 +23,7 @@ body {
 }
 h1,
 h2,
-h3,
-.serif {
+h3 {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 500;
   line-height: 1.02;
@@ -124,11 +123,6 @@ section {
   background: transparent;
   color: inherit;
   border-color: currentColor;
-}
-.btn.inv {
-  background: var(--bg);
-  color: #1f4e5f;
-  border-color: var(--bg);
 }
 .btn.sm {
   min-height: 48px;

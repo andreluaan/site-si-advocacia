@@ -20,17 +20,6 @@ h1 em {
 .js .mask.in {
   clip-path: inset(0);
 }
-.card:hover,
-.card:focus-within {
-  transform: translateY(-6px) scale(1.01);
-}
-.card li:after {
-  transition: transform 0.3s;
-}
-.card:hover li:after,
-.card:focus-within li:after {
-  transform: translateX(6px);
-}
 #mp:not([hidden]) a.l {
   animation: cas 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
@@ -55,28 +44,6 @@ h1 em {
     transform: translateY(16px);
   }
 }
-@supports (animation-timeline: view()) {
-  .js .steps li.rv {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  .steps li {
-    animation: lit linear both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 40%;
-  }
-  @keyframes lit {
-    from {
-      opacity: 0.25;
-      border-left-color: var(--line);
-    }
-    to {
-      opacity: 1;
-      border-left-color: var(--gold);
-    }
-  }
-}
 @media (prefers-reduced-motion: reduce) {
   @view-transition {
     navigation: none;
@@ -88,13 +55,9 @@ h1 em {
   .js .mask {
     clip-path: none;
   }
-  .steps li,
   #mp a.l {
     animation: none !important;
     opacity: 1;
-  }
-  .fg {
-    transform: none !important;
   }
 }
 
@@ -105,7 +68,6 @@ h1 em {
 .js .rv {
   transition-duration: 0.6s;
 }
-.bg,
-.fg {
+.bg {
   will-change: transform;
 }

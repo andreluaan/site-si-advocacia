@@ -182,98 +182,8 @@ nav a.l:hover {
     justify-content: space-between;
   }
 }
-/* áreas */
-.areas {
-  display: grid;
-  gap: 24px;
-  margin-top: 3rem;
-}
-.card {
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  padding: clamp(24px, 4vw, 48px);
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s,
-    border-color 0.3s;
-  border-top: 3px solid var(--line);
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--sh);
-  border-top-color: var(--gold);
-}
-.card .n {
-  font:
-    500 1.2rem "Cormorant Garamond",
-    serif;
-  color: var(--gold);
-}
-.card svg.big {
-  width: 44px;
-  height: 44px;
-  margin-block: 12px;
-  color: var(--accent);
-}
-.card p {
-  color: var(--soft);
-  margin: 0.8rem 0 1.4rem;
-}
-.card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
-}
-.card li {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-}
-.card li:after {
-  content: "→";
-  color: var(--gold);
-}
 .alt {
   background: var(--bg-alt);
-}
-@media (min-width: 900px) {
-  .areas {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-/* passos */
-.steps {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 36px;
-  margin-top: 3.5rem;
-  counter-reset: s;
-}
-.steps li {
-  border-left: 1px solid var(--gold);
-  padding-left: 24px;
-}
-.steps b {
-  display: block;
-  font:
-    500 clamp(3.5rem, 6vw, 5.5rem)/1 "Cormorant Garamond",
-    serif;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--accent);
-  margin-bottom: 0.4rem;
-}
-.steps p {
-  color: var(--soft);
-  margin-top: 0.5rem;
-}
-@media (min-width: 900px) {
-  .steps {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 /* pilares */
 .pil {
@@ -379,28 +289,6 @@ details p {
   max-width: 900px;
   margin-top: 3rem;
 }
-/* cta */
-.cta {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-alt);
-  color: var(--ink);
-  text-align: left;
-}
-.cta .bg {
-  background: linear-gradient(160deg, var(--ph1), var(--ph2));
-}
-.cta:after {
-  display: none;
-}
-.cta .wrap {
-  position: relative;
-  z-index: 2;
-}
-.cta h2 {
-  max-width: 14ch;
-  margin-bottom: 2rem;
-}
 /* contato */
 .ct {
   display: grid;
@@ -460,20 +348,6 @@ textarea {
 #st {
   font-weight: 600;
   min-height: 1.5em;
-}
-.info dt {
-  font-size: 0.875rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--soft);
-  margin-top: 1.4rem;
-}
-.info dd {
-  margin: 0;
-}
-.info a {
-  color: var(--accent);
-  font-weight: 600;
 }
 .map {
   aspect-ratio: 16/10;
