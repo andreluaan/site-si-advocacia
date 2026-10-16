@@ -12,7 +12,7 @@ const SITE = {
   team: [
     {
       name: "Ilzinaldo dos Santos Ideão",
-      oab: "OAB/[UF] [Nº]",
+      oab: "OAB/PB 29.839 · OAB/PE 1.706-A",
       areas: ["Direito Previdenciário", "Direito do Trabalho"],
       bio: "[TODO: bio de 2 linhas, em primeira pessoa do plural]",
       photo: "",
@@ -83,7 +83,7 @@ const SITE = {
     { city: "Goiana", uf: "PE", addr: "Rua Cordeiro de Faria, 60 – Centro, 55900-000" },
   ],
 
-  lawyer: { name: "Ilzinaldo dos Santos Ideão" /* TODO confirmar grafia */, oab: "OAB/[UF] [Nº]" },
+  lawyer: { name: "Ilzinaldo dos Santos Ideão", oab: "OAB/PB 29.839 · OAB/PE 1.706-A" },
   address: "R. do Prado, 981 – Liberdade, Patos – PB, 58703-000",
   email: "santosideao@gmail.com",
   mapsUrl: "",

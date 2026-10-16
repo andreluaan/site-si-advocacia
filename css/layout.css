@@ -96,8 +96,10 @@ footer li,
   display: grid;
   gap: clamp(24px, 4vw, 56px);
 }
+.mem .frame {
+  margin-bottom: 1.6rem;
+}
 .mem .ph {
-  margin-bottom: 1.2rem;
   max-width: none;
 }
 .mem h2 {
@@ -127,22 +129,25 @@ footer li,
   .pil > div:nth-child(3) {
     grid-column: span 5;
   }
-  .sob {
-    grid-template-columns: 7fr 5fr;
-    gap: clamp(32px, 6vw, 96px);
-  }
   .ph {
     max-width: none;
   }
-  .team {
-    grid-template-columns: repeat(12, 1fr);
-  }
+  /* cada membro em linha: foto ao lado do texto, cabe na altura da tela */
   .mem {
-    grid-column: span 5;
+    display: grid;
+    grid-template-columns: minmax(260px, 380px) 1fr;
+    column-gap: clamp(32px, 5vw, 72px);
+    align-items: start;
   }
-  .mem:nth-child(even) {
-    grid-column: 8 / span 5;
-    margin-top: 80px;
+  .mem .frame {
+    grid-row: 1 / span 6;
+    margin-bottom: 0;
+  }
+  .mem > :not(.frame) {
+    grid-column: 2;
+  }
+  .mem > .btn {
+    justify-self: start;
   }
 }
 

@@ -241,12 +241,7 @@ nav a.l:hover {
 .sob p + p {
   margin-top: 1rem;
 }
-@media (min-width: 900px) {
-  .sob {
-    grid-template-columns: 5fr 6fr;
-    gap: 80px;
-  }
-}
+
 /* faq */
 details {
   border-top: 1px solid var(--line);
