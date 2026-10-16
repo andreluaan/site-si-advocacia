@@ -45,6 +45,15 @@
         const tema = localStorage.getItem("tema");
         if (tema) document.documentElement.dataset.theme = tema;
       } catch (_) {}
+      // transição entre páginas cancelada (navegação rápida) não deve virar erro no console
+      const ignoreSkip = (e) => {
+        if (!e.viewTransition) return;
+        ["ready", "finished", "updateCallbackDone"].forEach((p) =>
+          e.viewTransition[p]?.catch(() => {}),
+        );
+      };
+      addEventListener("pageswap", ignoreSkip);
+      addEventListener("pagereveal", ignoreSkip);
     </script>
     <link
       rel="preload"
