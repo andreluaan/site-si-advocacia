@@ -80,8 +80,15 @@
               <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" />
             </svg>
           </button>
-          <button class="mb" id="mbtn" type="button" aria-expanded="false" aria-controls="mp">
-            Menu
+          <button
+            class="mb"
+            id="mbtn"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mp"
+          >
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
           </button>
         </div>
       </div>
@@ -90,9 +97,9 @@
 
   /* MENU */
   const MENU = `
-    <div id="mp" hidden role="dialog" aria-modal="true" aria-label="Menu">
-      <button class="mb" id="mx" type="button" style="align-self: flex-end; color: var(--ink)">
-        Fechar menu ✕
+    <div id="mp" inert role="dialog" aria-modal="true" aria-label="Menu">
+      <button class="mb" id="mx" type="button" aria-label="Fechar menu">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
       </button>
       <a class="l" href="${B}#areas">Áreas de atuação</a
       ><a class="l" href="${B}#como-funciona">Como funciona</a

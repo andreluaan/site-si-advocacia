@@ -20,7 +20,7 @@ h1 em {
 .js .mask.in {
   clip-path: inset(0);
 }
-#mp:not([hidden]) a.l {
+#mp.open a.l {
   animation: cas 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 #mp a.l:nth-of-type(2) {

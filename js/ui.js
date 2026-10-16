@@ -34,7 +34,9 @@ syncThemeButton();
 const menuPanel = $("#mp"),
   menuButton = $("#mbtn");
 function toggleMenu(o) {
-  menuPanel.hidden = !o;
+  // o painel fica sempre na página; a classe .open faz o fade/deslize e inert bloqueia o foco
+  menuPanel.classList.toggle("open", o);
+  menuPanel.inert = !o;
   menuButton.setAttribute("aria-expanded", o);
   document.body.style.overflow = o ? "hidden" : "";
   (o ? $("#mx") : menuButton).focus();
@@ -43,7 +45,7 @@ menuButton.onclick = () => toggleMenu(true);
 $("#mx").onclick = () => toggleMenu(false);
 $$("a", menuPanel).forEach((a) => (a.onclick = () => toggleMenu(false)));
 addEventListener("keydown", (e) => {
-  if (menuPanel.hidden) return;
+  if (!menuPanel.classList.contains("open")) return;
   if (e.key === "Escape") toggleMenu(false);
   if (e.key === "Tab") {
     const f = $$("button,a", menuPanel),
