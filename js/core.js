@@ -19,6 +19,7 @@ $$("a.wa").forEach((a) => {
   a.href = buildWhatsAppLink({ area: a.dataset.area, texto: a.dataset.msg });
   a.target = "_blank";
   a.rel = "noopener noreferrer";
+  if (a.dataset.area) a.setAttribute("aria-label", "Falar no WhatsApp sobre " + a.dataset.area);
   a.addEventListener("click", () => trackEvent("click_whatsapp", { position: a.dataset.pos }));
 });
 $$("a[data-tel]").forEach((a) => (a.href = "tel:+" + intlPhone(SITE.phone)));

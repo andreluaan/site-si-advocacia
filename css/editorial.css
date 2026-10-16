@@ -100,7 +100,7 @@
   }
   .row .link {
     justify-self: end;
-    text-align: right;
+    white-space: nowrap;
   }
   .bars li {
     grid-template-columns: 4fr 5fr 2fr;
